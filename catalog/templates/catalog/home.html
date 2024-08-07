@@ -1,0 +1,64 @@
+{% extends 'catalog/base.html' %}
+{% block content %}
+{% load my_tags %}
+<hr class="featurette-divider">
+
+<div class="row featurette">
+    <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">Самое важное для вашего здоровья</h2>
+        <p class="lead">Заказать комплекс витаминов:</p>
+        <p class="lead">- Ферритин,</p>
+        <p class="lead">- Витамин D,</p>
+        <p class="lead">- Витамин A + E,</p>
+        <p class="lead">- Селен,</p>
+        <p class="lead">- Витамин C,</p>
+        <p class="lead">- Витамин B12,</p>
+        <p class="lead">- Витамин B6,</p>
+        <p class="lead">- Витамин B1,</p>
+        <p class="lead">- и другие.</p>
+        <button type="button" class="btn btn-info">Заказать</button>
+    </div>
+    <div class="col-md-5">
+        <img src="{{ home.photo | media_filter }}">
+    </div>
+</div>
+
+<hr class="featurette-divider">
+
+<div class="row featurette">
+    <div class="col-md-7 order-md-2">
+        <h2 class="featurette-heading fw-normal lh-1">Медицинские услуги</h2>
+        <p class="lead">Заказать комплекс витаминов:</p>
+        <p class="lead">- Анализы,</p>
+        <p class="lead">- МРТ,</p>
+        <p class="lead">- КТ,</p>
+        <p class="lead">- Рентген,</p>
+        <p class="lead">- Маммография,</p>
+        <p class="lead">- Биопсия,</p>
+        <p class="lead">- Эндоскопия,</p>
+        <p class="lead">- УЗИ,</p>
+        <p class="lead">- Функциональная диагностика.</p>
+        <button type="button" class="btn btn-info">Записаться</button>
+    </div>
+    <div class="col-md-5 order-md-1">
+        <img src="{{ home.photo | media_filter }}">
+    </div>
+</div>
+
+<hr class="featurette-divider">
+
+<div class="row featurette">
+    <div class="col-md-7">
+        <h2 class="featurette-heading fw-normal lh-1">Стационар</h2>
+        <p class="lead">Вы можете посетить наш стационар и провести полную диагностику вошего здоровья!</p>
+        <p class="lead">Комфортное пребывание. Современное оборудование. Быстрая диагностика.
+            Высококвалифицированный персонал.</p>
+        <button type="button" class="btn btn-info">Позвонить</button>
+    </div>
+    <div class="col-md-5">
+        <img src="{{ home.photo | media_filter }}">
+    </div>
+</div>
+
+<hr class="featurette-divider">
+{% endblock %}

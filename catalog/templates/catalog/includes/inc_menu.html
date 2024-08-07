@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-navbar">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">ЗДОРОВЬЕ</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="{% url 'catalog:category_list' %}">Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="{% url 'catalog:contacts' %}">Контакты</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-disabled="true" href="#">О компании</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-disabled="true" href="#">Регистрация</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" aria-disabled="true" href="#">Вход</a>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input class="btn btn-light me-2" type="search" placeholder="Поиск на сайте" aria-label="Search">
+                <button class="btn btn-outline-light" type="submit">Поиск</button>
+            </form>
+        </div>
+    </div>
+</nav>

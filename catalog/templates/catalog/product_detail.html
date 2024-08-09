@@ -9,11 +9,13 @@
             <div class="col">
                 <div class="card shadow-sm">
                     <div class="card-body">
-                        <p class="card-text">{{ product.name }}</p>
-                        <p class="card-text">{{ product.description }}</p>
+                        <p class="card-text"><b>{{ product.name|linebreaksbr }}</b></p>
+                        <p class="card-text">{{ product.description|linebreaksbr }}</p>
                         <p class="card-text"><b>Ограничения:</b> {{ product.restrictions|linebreaksbr }}</p>
-                        <p class="card-text">Медицинские показания: {{ product.medical_indications }}</p>
-                        <p class="card-text">Цена: {{ product.price }}</p>
+                        <p class="card-text"><b>Медицинские показания:</b> {{ product.medical_indications|linebreaksbr }}</p>
+                        <p class="card-text"><b>Цена:</b> {{ product.price }} рублей</p>
+                        <a type="button" class="btn btn-info" href="{% url 'catalog:contacts' %}">Записаться</a>
+                        <a type="button" class="btn bg-info-subtle" href="{% url 'catalog:category_list' %}">Назад</a>
                     </div>
                 </div>
             </div>

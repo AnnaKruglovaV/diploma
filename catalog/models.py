@@ -101,3 +101,31 @@ class Product(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Company(models.Model):
+    name = models.CharField(
+        max_length=150,
+        verbose_name="Название компании",
+        help_text="Введите название компании",
+    )
+    description = models.TextField(
+        verbose_name="Описание компании",
+        help_text="Введите описание компании",
+        blank=True,
+        null=True,
+    )
+    photo = models.ImageField(
+        upload_to="product/photo",
+        blank=True,
+        null=True,
+        verbose_name="Изображение",
+        help_text="Загрузите фото компании",
+    )
+
+    class Meta:
+        verbose_name = "Компания"
+        verbose_name_plural = "Компании"
+
+    def __str__(self):
+        return self.name

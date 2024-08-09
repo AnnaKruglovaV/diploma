@@ -1,7 +1,8 @@
+from django.db.models import Q
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView, TemplateView
+from django.views.generic import DetailView, ListView, TemplateView
 
-from catalog.models import Category, Product, Home
+from catalog.models import Category, Home, Product, Company
 
 
 class HomeListView(ListView):
@@ -9,11 +10,11 @@ class HomeListView(ListView):
 
 
 class ContactsView(TemplateView):
-    template_name = 'catalog/contacts.html'
+    template_name = "catalog/contacts.html"
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['contacts'] = Product.objects.all()[:5]
+        context["contacts"] = Product.objects.all()[:5]
         return context
 
 
@@ -26,7 +27,7 @@ class CategoryDetailView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['products'] = Product.objects.filter(category=self.object)
+        context["products"] = Product.objects.filter(category=self.object)
         return context
 
 
@@ -36,4 +37,18 @@ class ProductListView(ListView):
 
 class ProductDetailView(DetailView):
     model = Product
-    success_url = reverse_lazy('catalog:product_list')
+    success_url = reverse_lazy("catalog:product_list")
+
+
+class SearchView(TemplateView):
+    model = Product
+    template_name = "catalog/search.html"
+
+    def get_queryset(self):
+        query = self.request.GET.get("q")
+        print(query)
+        return Product.objects.filter(name__icontains=query)
+
+
+class CompanyListView(ListView):
+    model = Company

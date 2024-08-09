@@ -1,19 +1,25 @@
 from django.contrib import admin
-from catalog.models import Product, Category, Home
+
+from catalog.models import Category, Home, Product, Company
 
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'price', 'category')
-    list_filter = ('category',)
-    search_fields = ('name', 'description')
+    list_display = ("id", "name", "price", "category")
+    list_filter = ("category",)
+    search_fields = ("name", "description")
 
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name')
+    list_display = ("id", "name")
 
 
 @admin.register(Home)
 class HomeAdmin(admin.ModelAdmin):
-    list_display = ('name',)
+    list_display = ("name",)
+
+
+@admin.register(Company)
+class CompanyAdmin(admin.ModelAdmin):
+    list_display = ("id", "name")

@@ -14,7 +14,7 @@
                         <p class="card-text"><b>Ограничения:</b> {{ product.restrictions|linebreaksbr }}</p>
                         <p class="card-text"><b>Медицинские показания:</b> {{ product.medical_indications|linebreaksbr }}</p>
                         <p class="card-text"><b>Цена:</b> {{ product.price }} рублей</p>
-                        <a type="button" class="btn btn-info" href="{% url 'catalog:contacts' %}">Записаться</a>
+                        <a type="button" class="btn btn-info" href="{% url 'catalog:account_list' %}">Записаться</a>
                         <a type="button" class="btn bg-info-subtle" href="{% url 'catalog:category_list' %}">Назад</a>
                     </div>
                 </div>

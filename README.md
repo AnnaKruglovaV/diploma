@@ -85,7 +85,4 @@
 2. Для установки всех зависимостей из файла requirements.txt, выполните следующую команду: pip install -r requirements.txt
 
 
-3. Docker
-
-
-
+3. Ввести команду: docker compose up.

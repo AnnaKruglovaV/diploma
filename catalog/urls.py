@@ -3,7 +3,7 @@ from django.urls import path
 from catalog.apps import CatalogConfig
 from catalog.views import (CategoryDetailView, CategoryListView, ContactsView,
                            ProductDetailView, ProductListView,
-                           SearchView, CompanyListView, AccountListView, create_appointment)
+                           SearchView, CompanyListView, AccountListView)
 
 app_name = CatalogConfig.name
 
@@ -19,5 +19,5 @@ urlpatterns = [
     path('search/', SearchView.as_view(), name='search'),
     path('company/', CompanyListView.as_view(), name='company_list'),
     path('account/', AccountListView.as_view(), name='account_list'),
-    path('create_appointment/', create_appointment, name='create_appointment'),
+    # path('create_appointment/', create_appointment, name='create_appointment'),
 ]

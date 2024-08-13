@@ -148,3 +148,19 @@ class Account(models.Model):
 
     def __str__(self):
         return self.name
+
+
+# class Appointment(models.Model):
+#     name = models.ForeignKey('auth.User', on_delete=models.CASCADE)
+#     appointment_date = models.DateField()
+#     appointment_time = models.TimeField()
+#     service_type = models.CharField(max_length=255)
+#     phone = models.CharField(max_length=35)
+#     email = models.EmailField()
+#
+#
+# class DiagnosticResult(models.Model):
+#     appointment = models.ForeignKey(Appointment, on_delete=models.CASCADE)
+#     test_name = models.CharField(max_length=255)
+#     result = models.TextField()
+#     created_at = models.DateTimeField(auto_now_add=True)

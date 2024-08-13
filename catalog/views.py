@@ -1,4 +1,5 @@
 from django.db.models import Q
+from django.shortcuts import redirect, render
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView, TemplateView
 
@@ -58,20 +59,25 @@ class AccountListView(ListView):
     model = Account
 
 
-def create_appointment(request):
-    if request.method == 'POST':
-        name = request.POST.get('name')
-        surname = request.POST.get('surname')
-        phone = request.POST.get('phone')
-        email = request.POST.get('email')
-        appointment_date = request.POST.get('appointment_date')
-        appointment_time = request.POST.get('appointment_time')
+# def create_appointment(request):
+#     if request.method == 'POST':
+#         name = request.POST.get('name')
+#         surname = request.POST.get('surname')
+#         phone = request.POST.get('phone')
+#         email = request.POST.get('email')
+#         appointment_date = request.POST.get('appointment_date')
+#         appointment_time = request.POST.get('appointment_time')
+#
+#         appointment = Appointment(name=name, phone=phone, surname=surname, email=email,
+#                                   appointment_date=appointment_date,
+#                                   appointment_time=appointment_time)
+#         appointment.save()
+#
+#         return redirect('catalog:account_list')
+#
+#     return render(request, 'catalog/account_list.html', {'create_appointment': create_appointment})
 
-        appointment = Appointment(name=name, phone=phone, surname=surname, email=email,
-                                  appointment_date=appointment_date,
-                                  appointment_time=appointment_time)
-        appointment.save()
 
-        return redirect('catalog:home')
-
-    return render(request, 'catalog/create_appointment.html')
+# def diagnostic_results(request, appointment_id):
+#     diagnostic_results = DiagnosticResult.objects.filter(appointment_id=appointment_id)
+#     return render(request, 'catalog/account_list.html', {'diagnostic_results': diagnostic_results})

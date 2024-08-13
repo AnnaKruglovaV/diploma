@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from catalog.models import Category, Home, Product, Company
+from catalog.models import Category, Product, Company, Account
 
 
 @admin.register(Product)
@@ -15,11 +15,16 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = ("id", "name")
 
 
-@admin.register(Home)
-class HomeAdmin(admin.ModelAdmin):
-    list_display = ("name",)
+# @admin.register(Home)
+# class HomeAdmin(admin.ModelAdmin):
+#     list_display = ("name",)
 
 
 @admin.register(Company)
 class CompanyAdmin(admin.ModelAdmin):
     list_display = ("id", "name")
+
+
+@admin.register(Account)
+class AccountAdmin(admin.ModelAdmin):
+    list_display = ("name", "surname", 'appointment')

@@ -2,11 +2,11 @@ from django.db.models import Q
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, ListView, TemplateView
 
-from catalog.models import Category, Home, Product, Company
+from catalog.models import Category, Product, Company, Account
 
 
-class HomeListView(ListView):
-    model = Home
+# class HomeListView(ListView):
+#     model = Home
 
 
 class ContactsView(TemplateView):
@@ -52,3 +52,26 @@ class SearchView(TemplateView):
 
 class CompanyListView(ListView):
     model = Company
+
+
+class AccountListView(ListView):
+    model = Account
+
+
+def create_appointment(request):
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        surname = request.POST.get('surname')
+        phone = request.POST.get('phone')
+        email = request.POST.get('email')
+        appointment_date = request.POST.get('appointment_date')
+        appointment_time = request.POST.get('appointment_time')
+
+        appointment = Appointment(name=name, phone=phone, surname=surname, email=email,
+                                  appointment_date=appointment_date,
+                                  appointment_time=appointment_time)
+        appointment.save()
+
+        return redirect('catalog:home')
+
+    return render(request, 'catalog/create_appointment.html')
